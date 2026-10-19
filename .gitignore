@@ -1,0 +1,10 @@
+**/bin/
+**/obj/
+.vs/
+.vscode/
+*.user
+*.suo
+*.db-shm
+*.db-wal
+# DB lokal opsional, migration tetap ikut source
+*.db
