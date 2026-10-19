@@ -1,8 +1,8 @@
 # IF133 - Tugas 1: Backend Skeleton & Data Persistence
 
-**Nama:** [ISI NAMA]  
-**NIM:** [ISI NIM]  
-**Kelas:** [ISI KELAS]  
+**Nama:** [Panji Arya Soma]  
+**NIM:** [1003240008]  
+**Kelas:** [Informatika]  
 **Mata kuliah:** Pemrograman .NET (IF133)  
 **Jenis tugas:** Individu, Minggu 3-4
 
