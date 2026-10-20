@@ -6,7 +6,7 @@
 **Mata kuliah:** Pemrograman .NET (IF133)  
 **Jenis tugas:** Individu, Minggu 3-4
 
-> Status: kode tersedia, tetapi build, migration, dan pengujian API **belum dijalankan atau diverifikasi** dalam lingkungan penyusunan. Lengkapi hasil aktual sebelum mengumpulkan tugas.
+> Status verifikasi lokal (20 Oktober 2026): `dotnet restore` berhasil, `dotnet build` berhasil (0 warning/0 error), migration `InitialCreate` berhasil membuat tabel `Products`, Swagger berjalan, dan **7/7 skenario CRUD serta validasi lulus** berdasarkan screenshot eksekusi. File bukti screenshot telah dikurasi menjadi 16 gambar yang disiapkan untuk diunggah ke folder `screenshots/`.
 
 ## 1. Studi kasus
 
@@ -97,28 +97,31 @@ Contoh JSON body POST atau PUT:
 
 POST sukses dirancang untuk menghasilkan `201 Created` beserta ID baru. Permintaan dengan name kosong atau stock negatif dirancang untuk menghasilkan `400 Bad Request`.
 
-## 7. Bukti pengujian yang wajib dilengkapi
+## 7. Hasil pengujian aktual melalui Swagger
 
-Impor `postman/IF133_Tugas1.postman_collection.json` dan jalankan seluruh request **berurutan**. Request POST valid menyimpan `productId` untuk GET, PUT, dan DELETE berikutnya. Screenshot harus berasal dari eksekusi nyata, bukan gambar buatan.
+Bukti berikut berdasarkan eksekusi pada 20 Oktober 2026, bukan hasil simulasi. Screenshot asli telah diberi nama berurutan untuk folder `screenshots/`. Untuk pengujian POST valid, ID yang dibuat adalah `1`. Setelah PUT, GET ulang menunjukkan perubahan harga dan stok; setelah DELETE, GET ulang menghasilkan 404.
 
-| No | Skenario | Expected | Hasil aktual | Screenshot |
+| No | Skenario | Respons aktual | Hasil | Screenshot |
 |---|---|---|---|---|
-| 1 | GET seluruh data | 200 + array | [ISI] | [ISI] |
-| 2 | POST data valid | 201 + object | [ISI] | [ISI] |
-| 3 | GET ID hasil POST | 200 + object | [ISI] | [ISI] |
-| 4 | PUT data valid | 204 | [ISI] | [ISI] |
-| 5 | DELETE data valid | 204 | [ISI] | [ISI] |
-| 6 | GET ID tidak ditemukan (999999) | 404 | [ISI] | [ISI] |
-| 7 | POST data invalid (stock -1) | 400 | [ISI] | [ISI] |
+| 1 | GET seluruh produk saat kosong | `200 OK`, `[]` | PASS | `09_get_all_200.png` |
+| 2 | POST data valid | `201 Created`, `id: 1` | PASS | `10_post_valid_201.png` |
+| 3 | GET ID 1 | `200 OK`, data produk | PASS | `11_get_by_id_200.png` |
+| 4 | PUT ID 1 | `204 No Content` | PASS | `12_put_valid_204.png` |
+| 5 | DELETE ID 1 | `204 No Content` | PASS | `14_delete_valid_204.png` |
+| 6 | GET ID 1 setelah DELETE | `404 Not Found` | PASS | `15_get_setelah_delete_404.png` |
+| 7 | POST dengan `stock: -5` | `400 Bad Request`, validasi stok | PASS | `16_post_stok_negatif_400.png` |
 
-PDF tugas mewajibkan sedikitnya 5 skenario dengan 1 skenario gagal. Dokumentasikan juga: struktur project, `dotnet run`, migration berhasil, dan struktur tabel database.
+Verifikasi tambahan: `13_get_setelah_put_200.png` menampilkan `200 OK` dengan `name: Keyboard Mechanical Pro`, `price: 400000`, dan `stock: 3`. Screenshot lainnya meliputi struktur project, entity, DbContext, controller, konfigurasi, build, migration, dan Swagger.
+
+**Catatan bukti:** tabel `Products` terbukti dibuat dari log `CREATE TABLE` saat migration, tetapi screenshot eksplisit DB Browser for SQLite belum tersedia. File PNG yang dirujuk masih perlu disinkronkan ke GitHub dari paket bukti yang telah disusun; hasil PASS di atas sudah didukung screenshot yang diberikan pengguna.
 
 ## 8. Kendala, solusi, dan kesimpulan
 
-- Kendala aktual: **[ISI SETELAH MENJALANKAN]**
-- Penyebab: **[ISI]**
-- Solusi: **[ISI]**
-- Kesimpulan: Project telah disusun menggunakan controller-based Web API, satu entity Product, dan konfigurasi EF Core SQLite. **Build, database update, dan API testing belum terverifikasi** sehingga klaim keberhasilan harus menunggu eksekusi aktual.
+- **Kendala awal:** perintah `dotnet` belum dikenali karena SDK belum terinstal/terminal lama belum memuat PATH yang baru.
+- **Solusi:** memasang .NET SDK 8, membuka ulang PowerShell, lalu memastikan `dotnet --info` berhasil.
+- **Kendala aplikasi:** POST data valid awalnya menghasilkan `500 Internal Server Error` karena atribut validasi `Range` untuk `decimal` gagal membaca batas `999999999.99` dengan pengaturan regional sistem.
+- **Solusi aplikasi:** menambahkan `ParseLimitsInInvariantCulture = true` di `ProductRequest.cs`, memperbarui project lokal dari GitHub, lalu menguji ulang.
+- **Hasil:** build 0 warning/0 error, migration SQLite berhasil, Swagger aktif, dan 7 skenario utama menghasilkan status HTTP sesuai harapan. Bukti visual dikurasi untuk pelaporan.
 
 ## 9. Pengumpulan
 
