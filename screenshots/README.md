@@ -1,17 +1,7 @@
-# Bukti pengujian
+# Screenshot bukti Tugas 1 IF133
 
-Folder ini untuk screenshot **asli** dari proses yang dijalankan di laptop. Contoh nama:
+Semua screenshot yang dipilih tercantum di [INDEX.md](INDEX.md) dengan nama file, deskripsi, dan hasil pengujian aktual. Ada 16 gambar hasil sortir: 5 bukti struktur/kode, 2 bukti build/migration, 1 Swagger, dan 8 pengujian/verifikasi HTTP.
 
-- `01_struktur_project.png`
-- `02_dotnet_run.png`
-- `03_migration_berhasil.png`
-- `04_tabel_database.png`
-- `05_get_all_200.png`
-- `06_post_201.png`
-- `07_get_by_id_200.png`
-- `08_put_204.png`
-- `09_delete_204.png`
-- `10_get_missing_404.png`
-- `11_post_invalid_400.png`
+Ketentuan: screenshot kegagalan POST 500 sebelum bug fix tidak dimasukkan sebagai bukti keberhasilan; kendala itu dapat dijelaskan sebagai proses troubleshooting. Respons aktual yang terdokumentasi: 200, 201, 204, 404, dan 400.
 
-Tidak ada screenshot yang direkayasa. Lengkapi setelah test dilakukan.
+**Catatan:** file gambar dibuat melalui penyalinan dari lampiran screenshot pengguna tanpa manipulasi isi. Beberapa screenshot terminal menampilkan nama folder atau user Windows lokal, sehingga pastikan sesuai kebutuhan privasi sebelum mendorongnya ke repository publik.
