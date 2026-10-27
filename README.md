@@ -1,4 +1,4 @@
-# IF133 - Tugas 1: Backend Skeleton & Data Persistence
+﻿# IF133 - Tugas 1: Backend Skeleton & Data Persistence
 
 **Nama:** Panji Arya Soma  
 **NIM:** 1003240008  
@@ -6,7 +6,7 @@
 **Mata kuliah:** Pemrograman .NET (IF133)  
 **Jenis tugas:** Individu, Minggu 3-4
 
-> Status verifikasi lokal (20 Oktober 2026): `dotnet restore` berhasil, `dotnet build` berhasil (0 warning/0 error), migration `InitialCreate` berhasil membuat tabel `Products`, Swagger berjalan, dan **7/7 skenario CRUD serta validasi lulus** berdasarkan screenshot eksekusi. Sebanyak 16 screenshot hasil eksekusi sudah tersimpan di folder [`screenshots/`](screenshots/INDEX.md).
+> Status verifikasi lokal (20 Oktober 2026): `dotnet restore` berhasil, `dotnet build` berhasil (0 warning/0 error), migration `InitialCreate` berhasil membuat tabel `Products`, Swagger berjalan, dan **7/7 skenario CRUD serta validasi lulus** berdasarkan screenshot eksekusi. Sebanyak 19 screenshot hasil eksekusi sudah tersimpan di folder [`screenshots/`](screenshots/INDEX.md).
 
 ## 1. Studi kasus
 
@@ -113,7 +113,7 @@ Bukti berikut berdasarkan eksekusi pada 20 Oktober 2026, bukan hasil simulasi. S
 
 Verifikasi tambahan: `13_get_setelah_put_200.png` menampilkan `200 OK` dengan `name: Keyboard Mechanical Pro`, `price: 400000`, dan `stock: 3`. Screenshot lainnya meliputi struktur project, entity, DbContext, controller, konfigurasi, build, migration, dan Swagger.
 
-**Catatan bukti:** tabel `Products` terbukti dibuat dari log `CREATE TABLE` saat migration, tetapi screenshot eksplisit DB Browser for SQLite belum tersedia. File PNG yang dirujuk sudah tersedia di folder [`screenshots/`](screenshots/INDEX.md).
+**Catatan bukti:** tabel `Products` terbukti dibuat dari log `CREATE TABLE` saat migration, tetapi screenshot DB Browser untuk struktur tabel sudah tersedia (nomor 17). File PNG yang dirujuk sudah tersedia di folder [`screenshots/`](screenshots/INDEX.md).
 
 ## 8. Kendala, solusi, dan kesimpulan
 
@@ -134,3 +134,4 @@ Materi/Hands-on Pertemuan 4 dan dokumen **Tugas 1 - Final: Entity Framework Core
 3. Gunakan nama folder pengumpulan `IF133_Tugas1_NIM_Nama` sesuai instruksi dosen; root GitHub tetap boleh memakai nama repository.
 4. Jangan sertakan secret, password, API key, token, atau folder `bin/obj` berukuran besar.
 5. Pastikan project dapat di-restore, build, migration, dan dijalankan sebelum dinyatakan selesai.
+

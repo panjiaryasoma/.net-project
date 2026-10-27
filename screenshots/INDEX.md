@@ -1,4 +1,4 @@
-# Bukti Screenshot Tugas 1 IF133
+﻿# Bukti Screenshot Tugas 1 IF133
 
 Bukti asli yang dikirim pengguna dari IDE/PowerShell/Swagger pada tanggal 19–20 Oktober 2026. Berkas hanya disalin dan diberi nama berurutan, **tanpa mengubah isi gambar**. Seluruh status HTTP di bawah berasal dari hasil eksekusi yang terlihat, bukan mock.
 
@@ -28,5 +28,15 @@ Bukti asli yang dikirim pengguna dari IDE/PowerShell/Swagger pada tanggal 19–2
 - Verifikasi DELETE dilakukan dengan GET ulang dan mendapatkan `404 Not Found`.
 - `Undocumented` di Swagger berarti respons HTTP tidak didokumentasikan eksplisit di OpenAPI, bukan kegagalan request.
 - Screenshot error 500 historis sebelum perbaikan sengaja tidak dimasukkan sebagai bukti PASS; kendala dan solusi bisa dijelaskan pada README utama.
-- Bukti tambahan berupa tampilan struktur tabel di DB Browser for SQLite **belum diberikan**; log migration yang ada menunjukkan perintah CREATE TABLE berhasil.
+- Bukti tampilan struktur tabel DB Browser for SQLite telah ditambahkan sebagai screenshot 17; log migration CREATE TABLE juga tersedia.
 - `Program.cs` bisa ditunjukkan langsung dari repository. Screenshot terpisah belum tersedia dari kiriman pengguna.
+
+## Bukti tambahan Pertemuan 4 (27 Oktober 2026)
+
+| File | Keterangan | Status |
+|---|---|---|
+| [17_sqlite_database_structure.png](./17_sqlite_database_structure.png) | DB Browser menampilkan tabel Products dan __EFMigrationsHistory beserta kolomnya | Terverifikasi visual |
+| [18_ef_core_package_list.png](./18_ef_core_package_list.png) | dotnet list package: EF Core Design dan SQLite 8.0.11, Swashbuckle 6.6.2 | Terverifikasi terminal |
+| [19_dotnet_run_server.png](./19_dotnet_run_server.png) | dotnet run mendengarkan pada http://localhost:5080 | Terverifikasi terminal |
+
+Nomor 18 dan 19 adalah crop dari screenshot PowerShell asli yang sama, tanpa perubahan isi terminal. Screenshot Browse Data yang menunjukkan **baris** migration history belum tersedia; screenshot nomor 17 hanya menunjukkan keberadaan tabel dan struktur.

@@ -1,4 +1,4 @@
-# IF133 Pertemuan 4 — Tugas 1 Final
+﻿# IF133 Pertemuan 4 — Tugas 1 Final
 
 **Judul tugas resmi:** Tugas 1 - Final: Entity Framework Core & Data Persistence  
 **Nama:** Panji Arya Soma  
@@ -56,8 +56,8 @@ Pernyataan di atas berasal dari screenshot eksekusi pengguna tanggal 19–20 Okt
 
 ## Batas verifikasi / catatan pengumpulan
 
-1. Bukti SQLite berupa log migration `CREATE TABLE` sudah ada. **Screenshot eksplisit tabel lewat DB Browser atau SQLite extension belum tersedia.**
-2. Screenshot terpisah `dotnet list package` atau tampilan package `.csproj` belum tersedia; referensi file `.csproj` ada.
+1. Bukti SQLite berupa log migration `CREATE TABLE` sudah ada. **Screenshot struktur tabel lewat DB Browser tersedia (bukti nomor 17); bukti isi baris __EFMigrationsHistory belum ada.**
+2. Screenshot `dotnet list package` sudah tersedia (bukti nomor 18); referensi `.csproj` juga ada.
 3. Hands-on meminta screenshot Swagger *sebelum* pemasangan EF Core. Yang tersedia adalah Swagger aplikasi akhir, sehingga bukti historis tahap pra-EF Core tidak bisa direkonstruksi secara jujur.
 4. Database SQLite lokal `if133_tugas1.db` tidak di-commit karena `.gitignore` mengecualikan `*.db`. Database bisa dibuat ulang lewat migration. Jika kanal pengumpulan mensyaratkan berkas `.db`, lampirkan salinan database lokal dalam paket pengumpulan, jangan menciptakan file kosong sebagai pengganti.
 
@@ -66,3 +66,4 @@ Pernyataan di atas berasal dari screenshot eksekusi pengguna tanggal 19–20 Okt
 Fungsi utama dan bukti pengujian berhasil diverifikasi; kelengkapan dokumentasi Pertemuan 4 tersusun di folder ini. Tiga kekurangan bukti visual di atas perlu diperhatikan sebelum menyebut pengumpulan memenuhi seluruh checklist hands-on.
 
 Tidak ada frontend, deployment, atau aplikasi baru yang diperlukan untuk output dokumen ini.
+
