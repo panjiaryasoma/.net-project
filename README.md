@@ -1,12 +1,12 @@
 # IF133 - Tugas 1: Backend Skeleton & Data Persistence
 
-**Nama:** [Panji Arya Soma]  
-**NIM:** [1003240008]  
-**Kelas:** [Informatika]  
+**Nama:** Panji Arya Soma  
+**NIM:** 1003240008  
+**Program studi:** Informatika  
 **Mata kuliah:** Pemrograman .NET (IF133)  
 **Jenis tugas:** Individu, Minggu 3-4
 
-> Status verifikasi lokal (20 Oktober 2026): `dotnet restore` berhasil, `dotnet build` berhasil (0 warning/0 error), migration `InitialCreate` berhasil membuat tabel `Products`, Swagger berjalan, dan **7/7 skenario CRUD serta validasi lulus** berdasarkan screenshot eksekusi. File bukti screenshot telah dikurasi menjadi 16 gambar yang disiapkan untuk diunggah ke folder `screenshots/`.
+> Status verifikasi lokal (20 Oktober 2026): `dotnet restore` berhasil, `dotnet build` berhasil (0 warning/0 error), migration `InitialCreate` berhasil membuat tabel `Products`, Swagger berjalan, dan **7/7 skenario CRUD serta validasi lulus** berdasarkan screenshot eksekusi. Sebanyak 16 screenshot hasil eksekusi sudah tersimpan di folder [`screenshots/`](screenshots/INDEX.md).
 
 ## 1. Studi kasus
 
@@ -113,7 +113,7 @@ Bukti berikut berdasarkan eksekusi pada 20 Oktober 2026, bukan hasil simulasi. S
 
 Verifikasi tambahan: `13_get_setelah_put_200.png` menampilkan `200 OK` dengan `name: Keyboard Mechanical Pro`, `price: 400000`, dan `stock: 3`. Screenshot lainnya meliputi struktur project, entity, DbContext, controller, konfigurasi, build, migration, dan Swagger.
 
-**Catatan bukti:** tabel `Products` terbukti dibuat dari log `CREATE TABLE` saat migration, tetapi screenshot eksplisit DB Browser for SQLite belum tersedia. File PNG yang dirujuk masih perlu disinkronkan ke GitHub dari paket bukti yang telah disusun; hasil PASS di atas sudah didukung screenshot yang diberikan pengguna.
+**Catatan bukti:** tabel `Products` terbukti dibuat dari log `CREATE TABLE` saat migration, tetapi screenshot eksplisit DB Browser for SQLite belum tersedia. File PNG yang dirujuk sudah tersedia di folder [`screenshots/`](screenshots/INDEX.md).
 
 ## 8. Kendala, solusi, dan kesimpulan
 
@@ -123,7 +123,11 @@ Verifikasi tambahan: `13_get_setelah_put_200.png` menampilkan `200 OK` dengan `n
 - **Solusi aplikasi:** menambahkan `ParseLimitsInInvariantCulture = true` di `ProductRequest.cs`, memperbarui project lokal dari GitHub, lalu menguji ulang.
 - **Hasil:** build 0 warning/0 error, migration SQLite berhasil, Swagger aktif, dan 7 skenario utama menghasilkan status HTTP sesuai harapan. Bukti visual dikurasi untuk pelaporan.
 
-## 9. Pengumpulan
+## 9. Finalisasi Pertemuan 4
+
+Materi/Hands-on Pertemuan 4 dan dokumen **Tugas 1 - Final: Entity Framework Core & Data Persistence** ditangani sebagai finalisasi Tugas 1 yang sama, bukan Tugas 2 baru. Dokumentasi khusus ada di [`P04_Tugas1_Final/`](P04_Tugas1_Final/README.md), termasuk worksheet, exit ticket, dan pemetaan evidence. Source code tetap di `IF133.Tugas1.Api/` agar tidak ada salinan project kedua.
+
+## 10. Pengumpulan
 
 1. Lengkapi identitas dan bukti pengujian yang benar-benar dilakukan.
 2. Sertakan seluruh source code, migration, README atau PDF, dan screenshot.
